@@ -1,0 +1,12 @@
+{
+  "name": "2xl-stacksync",
+  "version": "0.0.1",
+  "author": "Chenglong Zou",
+  "summary": "Puppet module stacksync-client for personal cloud",
+  "license": "GPLv2",
+  "source": "https://github.com/2xl/2xl-stacksync",
+  "project_page": "https://github.com/2xl/2xl-stacksync",
+  "issues_url": "https://tickets.puppetlabs.com/browse/MODULES",
+  "dependencies": []
+
+}
