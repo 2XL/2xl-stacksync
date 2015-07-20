@@ -17,9 +17,7 @@ class stacksync (
   $rmq_host                 = '10.30.239.228',
   $rmq_port                = '5672',
   $rmq_enablessl            = 'false',
-
   $rmq_username               = 'guest',
-
   $rmq_password               = 'guest',
   $rmq_rpc_exchange            = '',
   $cache_size                = '1024',
