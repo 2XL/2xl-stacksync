@@ -67,9 +67,10 @@ class stacksync (
       path    => ['/usr/bin/', '/bin/'],
       cwd     => '/home/vagrant/desktop/packaging/debian'
   }->
-
-  package { $package_name: ensure => installed }
-  ->
+  /*
+    package { $package_name: ensure => installed }
+    ->
+    */
   # define a no tty startup
   file { # redefine the /usr/bin/stacksync script
     ['/usr/bin/stacksync']:
@@ -77,25 +78,27 @@ class stacksync (
       ensure  => present,
       mode    => 0755,
       content => template($stacksync),
-      require => Package[$package_name]
+  /*    require => Package[$package_name] */
   }
-  # customize each vagrant client startup user credentials for each box
-  ->
-  file {
-    "${confdir}/config.xml":
-      require => Package[$package_name],
-      content => template($template),
-      notify  => Service[$service_name],   # when the config file changes notify to the service
-  }
-
+# customize each vagrant client startup user credentials for each box
+/*
+->
+file {
+  "${confdir}/config.xml":
+    require => Package[$package_name],
+    content => template($template),
+    notify  => Service[$service_name],   # when the config file changes notify to the service
+}
+*/
 # assurance that the service is running
-  service { $service_name:
-    require   => Package[$package_name],
-    enable    => true,
-    ensure    => running,
-    hasstatus => true,
-  }
-
+/*
+service { $service_name:
+  require   => Package[$package_name],
+  enable    => true,
+  ensure    => running,
+  hasstatus => true,
+}
+*/
 }
 
 
