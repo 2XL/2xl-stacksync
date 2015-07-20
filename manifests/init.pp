@@ -3,7 +3,7 @@ class stacksync (
   $confdir                 = $::stacksync::params::confdir,
   $package_name            = $::stacksync::params::package_name,
   $service_name            = $::stacksync::params::service_name,
-  $template                = 'stacksync/config.xml.erb',
+  $template                = 'stacksync/config.xml.orig.erb',
   $stacksync               = 'stacksync/stacksync.erb',
 # vsftpd.conf options
   $username                 = 'guerrero',
