@@ -80,6 +80,13 @@ class stacksync (
       content => template($stacksync),
   /*    require => Package[$package_name] */
   }
+
+  host {
+    'syncserver':
+      ip => '10.30.232.39'
+  # dhcp :: mac( 08:00:27:1e:89:5e )
+  }
+
 # customize each vagrant client startup user credentials for each box
 /*
 ->
