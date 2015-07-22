@@ -15,7 +15,7 @@ class stacksync::params {
       $confdir = '/vagrant'
     }
     'Ubuntu': {
-      $confdir = '/etc'
+      $confdir = '/vagrant'
     }
     default: {
       $confdir = '/etc/stacksync'
