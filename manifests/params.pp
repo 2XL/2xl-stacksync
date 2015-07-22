@@ -11,7 +11,9 @@ class stacksync::params {
     'Amazon': {
       $confdir = '/etc/stacksync'
     }
-    'Debian',
+    'Debian': {
+      $confdir = '/vagrant'
+    }
     'Ubuntu': {
       $confdir = '/etc'
     }

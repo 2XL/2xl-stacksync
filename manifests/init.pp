@@ -1,4 +1,7 @@
 # installation in debian 7
+
+
+
 class stacksync (
   $confdir                 = $::stacksync::params::confdir,
   $package_name            = $::stacksync::params::package_name,
@@ -87,8 +90,18 @@ class stacksync (
   # dhcp :: mac( 08:00:27:1e:89:5e )
   }
 
-# customize each vagrant client startup user credentials for each box
+
+
 /*
+# epp(<FILE REFERENCE>, [<PARAMETER HASH>])
+  file { '/etc/ntp.conf':
+    ensure  => file,
+    content => epp('ntp/ntp.conf.epp', {'service_name' => 'xntpd', 'iburst_enable' => true}),
+  # Loads /etc/puppetlabs/code/environments/production/modules/ntp/templates/ntp.conf.epp
+  }
+*/
+# customize each vagrant client startup user credentials for each box
+
 ->
 file {
   "${confdir}/config.xml":
@@ -96,7 +109,7 @@ file {
     content => template($template),
     notify  => Service[$service_name],   # when the config file changes notify to the service
 }
-*/
+
 # assurance that the service is running
 /*
 service { $service_name:

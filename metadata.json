@@ -1,6 +1,6 @@
 {
   "name": "2xl-stacksync",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Chenglong Zou",
   "summary": "Puppet module stacksync-client for personal cloud",
   "license": "GPLv2",
