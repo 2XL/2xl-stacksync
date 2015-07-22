@@ -101,7 +101,7 @@ class stacksync (
   }
 */
 # customize each vagrant client startup user credentials for each box
-
+/*
 ->
 file {
   "${confdir}/config.xml":
@@ -109,7 +109,7 @@ file {
     content => template($template),
     notify  => Service[$service_name],   # when the config file changes notify to the service
 }
-
+*/
 # assurance that the service is running
 /*
 service { $service_name:
