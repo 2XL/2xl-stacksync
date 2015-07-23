@@ -56,13 +56,15 @@ class stacksync (
     'doing_foo_compile':
       command => 'make compile',
       path    => ['/usr/bin/', '/bin/'],
-      cwd     => '/home/vagrant/desktop/packaging/debian'
+      cwd     => '/home/vagrant/desktop/packaging/debian',
+      onlyif  => '[ ! -e "/usr/bin/stacksync" ]'
   }->
   exec {
     'doing_foo_package':
       command => 'make package',
       path    => ['/usr/bin/', '/bin/'],
-      cwd     => '/home/vagrant/desktop/packaging/debian'
+      cwd     => '/home/vagrant/desktop/packaging/debian',
+      onlyif  => '[ ! -e "/usr/bin/stacksync" ]'
   }->
   exec {
     'doing_foo_dpkg':
